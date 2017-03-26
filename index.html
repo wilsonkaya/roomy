@@ -75,6 +75,48 @@
             Sign In
           </button>
 
+          <!-- sign-up -->
+          <button type="button" class="btn btn-warning btn-lg signin-hide" data-toggle="modal" data-target="#myModal">
+            Sign Up
+            </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Sign up!</h4>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-up">
+                    <fieldset>
+                      <label>
+                        Email
+                        <input type="text" name="credentials[email]" class= "clean-signup">
+                      </label>
+                      <label>
+                        Password
+                        <input type= "password" name="credentials[password]" class = "clean-signup">
+                      </label>
+                      <label>
+                        Password Confirmation
+                        <input type="password" name="credentials[password_confirmation]" class="clean-signup">
+                      </label>
+                      <input type="submit" name="submit" value="Sign up!">
+                    </fieldset>
+                    <div id="warning1">
+
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Modal -->
           <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
             <div class="modal-dialog" role="document">
@@ -112,46 +154,6 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<button type="button" class="btn btn-warning btn-lg signin-hide" data-toggle="modal" data-target="#myModal">
-  Sign Up
-  </button>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Sign up!</h4>
-      </div>
-      <div class="modal-body">
-        <form id="sign-up">
-          <fieldset>
-            <label>
-              Email
-              <input type="text" name="credentials[email]" class= "clean-signup">
-            </label>
-            <label>
-              Password
-              <input type= "password" name="credentials[password]" class = "clean-signup">
-            </label>
-            <label>
-              Password Confirmation
-              <input type="password" name="credentials[password_confirmation]" class="clean-signup">
-            </label>
-            <input type="submit" name="submit" value="Sign up!">
-          </fieldset>
-          <div id="warning1">
-
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
 
 <button name="button" id="getRentals">Search</button>
 </html>
