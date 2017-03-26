@@ -2,8 +2,8 @@
 
 const config = {
   apiOrigins: {
-    production: 'https://roomy-api.herokuapp.com/',
-    development: 'http://localhost:4741/'
+    production: 'https://roomy-api.herokuapp.com',
+    development: 'http://localhost:4741'
   }
 }
 
