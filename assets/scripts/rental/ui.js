@@ -4,7 +4,6 @@ const updateRentalTemplate = require('../templates/update-rental-listing.handleb
 const onSuccess = (data) => {
   let showRentalsHtml = showRentalTemplate({ rentals: data.rentals })
   $('#show').html(showRentalsHtml)
-  console.log(data)
 }
 //
 // const onError = function (response) {
@@ -25,9 +24,8 @@ const onPatchSuccess = (data, rentalId) => {
   // setTimeout(function() {$('[data-id ='+ accountId +']').html(showBooksHtml);}, 1300);
 // {$('[data-id ='+ accountId +']').replaceWith(showBooksHtml)
 
-};
-//
-//
+}
+
 // const onPostSuccess = function (data) {
 //   $("#warning-create-new-data").text("Succesfull !");
 //   setTimeout(function() {$('#myModal-create-password').modal('hide');}, 1300);
@@ -36,9 +34,8 @@ const onPatchSuccess = (data, rentalId) => {
 //   let showBooksHtml = createAccount({ account: data.account });
 //   $('.content').append(showBooksHtml);
 //   $("#warning-get").text("");
-// };
-//
-//
+// }
+
 // const onPostError = function() {
 //   $("#warning-create-new-data").text("Please fill in !");
 // };
@@ -52,8 +49,8 @@ module.exports = {
   onSuccess,
   // onError,
   onDeleteSuccess,
-  onUpdateSucces
-  // onPatchSuccess,
+  onUpdateSucces,
+  onPatchSuccess
   // onPostSuccess,
   // onPostError
 }

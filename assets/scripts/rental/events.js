@@ -6,14 +6,8 @@ const ui = require('./ui.js')
 
 const getFormFields = require('../../../lib/get-form-fields')
 
-// get in the habit of naming your handlers, it eases debugging.
-//
-// also, follow a convention for handlers. here, I name my handler
-// beginning with 'on' to denote that it is done when the GET /books
-// button is clicked
 const onGetRental = function (event) {
   event.preventDefault()
-  console.log('it works')
   api.index()
   .then(ui.onSuccess)
   .catch(ui.onError)
@@ -41,7 +35,8 @@ const onPatchRental = function(event) {
   let data = getFormFields(event.target)
   let rentalId = event.target.getAttribute('data-id')
   api.patch(data, rentalId)
-    // .then(ui.onPatchSuccess(data))
+    .then(api.index)
+    .then(ui.onSuccess)
     .catch(ui.onError)
 }
 
