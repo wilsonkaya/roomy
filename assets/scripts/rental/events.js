@@ -4,7 +4,7 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 // attach getFormFields globally
 
-// const getFormFields = require('../../../lib/get-form-fields')
+const getFormFields = require('../../../lib/get-form-fields')
 
 // get in the habit of naming your handlers, it eases debugging.
 //
@@ -18,26 +18,33 @@ const onGetRental = function (event) {
   .then(ui.onSuccess)
   .catch(ui.onError)
 }
-//
-// const onDeleteAccount = function(event){
-//   event.preventDefault();
-//   let accountId = event.target.getAttribute('data-id');
-//   console.log(accountId);
-//   api.destroy(accountId)
-//     .then(ui.onDeleteSuccess(accountId))
-//     .catch(ui.onError);
-// };
-// //
-// const onPatchAccount = function(event) {
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//   let accountId = event.target.getAttribute('data-id');
-//   // console.log(data,accountId);
-//   api.patch(data, accountId)
-//     .then(ui.onPatchSuccess(data,accountId))
-//     .catch(ui.onError);
-// };
-//
+
+const onShowUpdate = function(event) {
+  event.preventDefault()
+  let data = getFormFields(event.target)
+  let rentalId = event.target.getAttribute('data-id')
+  api.show(rentalId)
+    .then(ui.onUpdateSucces)
+    .catch(ui.onError)
+}
+
+const onDeleteRental = function (event) {
+  event.preventDefault()
+  let rentalId = event.target.getAttribute('data-id')
+  api.destroy(rentalId)
+    .then(ui.onDeleteSuccess(rentalId))
+    .catch(ui.onError)
+}
+
+const onPatchRental = function(event) {
+  event.preventDefault()
+  let data = getFormFields(event.target)
+  let rentalId = event.target.getAttribute('data-id')
+  api.patch(data, rentalId)
+    // .then(ui.onPatchSuccess(data))
+    .catch(ui.onError)
+}
+
 // const onPostAccount = function(event){
 //   event.preventDefault();
 //  let data = getFormFields(event.target);
@@ -48,8 +55,11 @@ const onGetRental = function (event) {
 
 const rentalHandlers = () => {
   $('#getRentals').on('click', onGetRental)
-  // $('#content').on('click','.remove' ,onDeleteAccount);
-  // $('#content').on('submit', '.submit-update', onPatchAccount);
+  $('#show').on('click', '.remove', onDeleteRental)
+  $('#show').on('click', '.show-update', onShowUpdate)
+  $('#show').on('submit', '.submit-update', onPatchRental)
+  // $('.remove').on('click', onDeleteRental)
+  // $('.submit-update').on('click', onShowUpdate)
   // $('#create-hint').on('submit', onPostAccount);
 }
 module.exports = {

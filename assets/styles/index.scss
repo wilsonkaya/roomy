@@ -1,2 +1,10 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+#show{
+width: 800px;
+height: 1600px;
+border: 1px solid black;
+margin-left: 25%;
+font-size: 20px;
+}
