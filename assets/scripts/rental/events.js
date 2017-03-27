@@ -44,24 +44,33 @@ const onPatchRental = function(event) {
   let rentalId = event.target.getAttribute('data-id')
   api.patch(data, rentalId)
     .then(api.indexMyRental)
+    // .then(ui.onPatchSuccess)//I need to add warnings, it doesn't exist yet
     .then(ui.onSuccess)
     .catch(ui.onError)
 }
 
-// const onPostAccount = function(event){
-//   event.preventDefault();
-//  let data = getFormFields(event.target);
-//   api.post(data)
-//     .then(ui.onPostSuccess)
-//     .catch(ui.onPostError);
-// };
+const onPostRental = function(event){
+  event.preventDefault()
+  let data = getFormFields(event.target)
+  console.log(data)
+  api.post(data)
+  .then(api.indexMyRental)
+  .then(ui.onSuccess)
+  // .then(ui.onPostSuccess)//I need to add warnings
+  .catch(ui.onPostError)
+}
+const onShowRentalForm = function () {
+  ui.onCreateNewRental()
+}
 
 const rentalHandlers = () => {
   $('#getRentals').on('click', onGetMyRental)
   $('.deneme').on('submit', onGetRental)
+  $('#createRentalForm').on('click', onShowRentalForm)
   $('#show').on('click', '.remove', onDeleteRental)
   $('#show').on('click', '.show-update', onShowUpdate)
   $('#show').on('submit', '.submit-update', onPatchRental)
+  $('#show').on('submit', '#createRental', onPostRental)
   // $('.remove').on('click', onDeleteRental)
   // $('.submit-update').on('click', onShowUpdate)
   // $('#create-hint').on('submit', onPostAccount);

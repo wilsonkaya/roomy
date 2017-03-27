@@ -51,23 +51,22 @@ const patch = function (data, rentalId) {
   })
 }
 
-//
-// const post = function (data) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/accounts' ,
-//     method: 'POST',
-//     headers: {
-//       Authorization: `Token token=${store.user.token}`,
-//     },
-//     data,
-//   });
-// };
+const post = function (data) {
+  return $.ajax({
+    url: config.apiOrigin + '/rentals',
+    method: 'POST',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data
+  })
+}
 
 module.exports = {
   index,
   show,
   destroy,
   patch,
-  indexMyRental
-  // post
+  indexMyRental,
+  post
 }

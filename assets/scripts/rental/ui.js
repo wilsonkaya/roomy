@@ -2,6 +2,7 @@
 const showRentalTemplate = require('../templates/rental-listing.handlebars')
 const showAllRentalsTemplate = require('../templates/rental-index-listing.handlebars')
 const updateRentalTemplate = require('../templates/update-rental-listing.handlebars')
+const createRentalForm = require('../templates/create-rental-form.handlebars')
 const onSuccess = (data) => {
   let showRentalsHtml = showRentalTemplate({ rentals: data.rentals })
   $('#show').html(showRentalsHtml)
@@ -28,15 +29,9 @@ const onPatchSuccess = (data, rentalId) => {
 
 }
 
-// const onPostSuccess = function (data) {
-//   $("#warning-create-new-data").text("Succesfull !");
-//   setTimeout(function() {$('#myModal-create-password').modal('hide');}, 1300);
-//   setTimeout(function() {$('.clean-create').val("");}, 1300);
-//   setTimeout(function() {$('#warning-create-new-data').text("");}, 1300);
-//   let showBooksHtml = createAccount({ account: data.account });
-//   $('.content').append(showBooksHtml);
-//   $("#warning-get").text("");
-// }
+const onPostSuccess = function (data) {
+
+}
 
 // const onPostError = function() {
 //   $("#warning-create-new-data").text("Please fill in !");
@@ -47,13 +42,19 @@ const onUpdateSucces = (data) => {
   let updateRentalHtml = updateRentalTemplate({rental: data.rental})
   $('#show').html(updateRentalHtml)
 }
+
+const onCreateNewRental = () => {
+  let createRentalFormHtml = createRentalForm()
+  $('#show').html(createRentalFormHtml)
+}
 module.exports = {
   onSuccess,
   // onError,
   onDeleteSuccess,
   onUpdateSucces,
   onPatchSuccess,
-  onIndexSuccess
-  // onPostSuccess,
+  onIndexSuccess,
+  onCreateNewRental,
+  onPostSuccess
   // onPostError
 }
