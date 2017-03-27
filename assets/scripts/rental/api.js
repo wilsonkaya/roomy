@@ -12,6 +12,16 @@ const index = function () {
   })
 }
 
+const indexMyRental = function () {
+  return $.ajax({
+    url: config.apiOrigin + '/myrentals',
+    method: 'GET',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
+
 const show = function (id) {
   return $.ajax({
     url: config.apiOrigin + '/rentals/' + id,
@@ -56,6 +66,7 @@ module.exports = {
   index,
   show,
   destroy,
-  patch
+  patch,
+  indexMyRental
   // post
 }

@@ -13,6 +13,13 @@ const onGetRental = function (event) {
   .catch(ui.onError)
 }
 
+const onGetMyRental = function (event) {
+  event.preventDefault()
+  api.indexMyRental()
+  .then(ui.onSuccess)
+  .catch(ui.onError)
+}
+
 const onShowUpdate = function(event) {
   event.preventDefault()
   let data = getFormFields(event.target)
@@ -35,7 +42,7 @@ const onPatchRental = function(event) {
   let data = getFormFields(event.target)
   let rentalId = event.target.getAttribute('data-id')
   api.patch(data, rentalId)
-    .then(api.index)
+    .then(api.indexMyRental)
     .then(ui.onSuccess)
     .catch(ui.onError)
 }
@@ -49,7 +56,8 @@ const onPatchRental = function(event) {
 // };
 
 const rentalHandlers = () => {
-  $('#getRentals').on('click', onGetRental)
+  $('#getRentals').on('click', onGetMyRental)
+  // $('#getRentals').on('click', onGetRental)This is for general search
   $('#show').on('click', '.remove', onDeleteRental)
   $('#show').on('click', '.show-update', onShowUpdate)
   $('#show').on('submit', '.submit-update', onPatchRental)
