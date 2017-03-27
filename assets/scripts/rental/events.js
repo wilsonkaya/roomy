@@ -8,8 +8,9 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const onGetRental = function (event) {
   event.preventDefault()
-  api.index()
-  .then(ui.onSuccess)
+  let data = getFormFields(event.target)
+  api.index(data)
+  .then(ui.onIndexSuccess)
   .catch(ui.onError)
 }
 
@@ -57,7 +58,7 @@ const onPatchRental = function(event) {
 
 const rentalHandlers = () => {
   $('#getRentals').on('click', onGetMyRental)
-  // $('#getRentals').on('click', onGetRental)This is for general search
+  $('.deneme').on('submit', onGetRental)
   $('#show').on('click', '.remove', onDeleteRental)
   $('#show').on('click', '.show-update', onShowUpdate)
   $('#show').on('submit', '.submit-update', onPatchRental)

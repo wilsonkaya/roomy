@@ -1,15 +1,17 @@
 'use strict'
 const showRentalTemplate = require('../templates/rental-listing.handlebars')
+const showAllRentalsTemplate = require('../templates/rental-index-listing.handlebars')
 const updateRentalTemplate = require('../templates/update-rental-listing.handlebars')
 const onSuccess = (data) => {
   let showRentalsHtml = showRentalTemplate({ rentals: data.rentals })
   $('#show').html(showRentalsHtml)
 }
-//
-// const onError = function (response) {
-//   console.error(response);
-// };
-//
+
+const onIndexSuccess = (data) => {
+  let showRentalsHtml = showAllRentalsTemplate({ rentals: data.rentals })
+  $('#show').html(showRentalsHtml)
+}
+
 const onDeleteSuccess = function (rentalId) {
   $('[data-id =' + rentalId + ']').remove()
 }
@@ -50,7 +52,8 @@ module.exports = {
   // onError,
   onDeleteSuccess,
   onUpdateSucces,
-  onPatchSuccess
+  onPatchSuccess,
+  onIndexSuccess
   // onPostSuccess,
   // onPostError
 }
