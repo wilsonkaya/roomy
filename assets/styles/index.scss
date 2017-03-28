@@ -11,15 +11,16 @@ height: 300px;
 border: 1px solid black;
 font-size: 20px;
 text-align: center;
-// float:left;
+float:left;
+
 }
-// #shows{
-// width: 400px;
-// height: 300px;
-// border: 1px solid black;
-// font-size: 20px;
-// float: right;
-// }
+#shows{
+width: 400px;
+height: 300px;
+border: 1px solid black;
+font-size: 20px;
+float: right;
+}
 .visible-signin {
   display: none;
   padding: 5px;

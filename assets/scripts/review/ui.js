@@ -1,25 +1,30 @@
-// 'use strict'
-// const showReviewsTemplate = require('../templates/show-reviews.handlebars')
-// const createReviewTemplate = require('../templates/create-review.handlebars')
-// const onIndexSuccess = (data) => {
-//   let createId = data.reviews[0].rentals
-//   let showReviewsHtml = showReviewsTemplate({ reviews: data.reviews, createId })
-//   $('#shows').html(showReviewsHtml)
-// }
+'use strict'
+const showReviewsTemplate = require('../templates/show-reviews.handlebars')
+const createReviewTemplate = require('../templates/create-review.handlebars')
+const onIndexSuccess = (data) => {
+  // if(data.length > 0 ){
+    // let createId = data.reviews[0].rentals
+    let showReviewsHtml = showReviewsTemplate({ reviews: data.reviews})
+    $('#shows').html(showReviewsHtml)
+  // } else {
+  //   console.log("empty")
+  // }
+
+}
 
 // const onIndexError = function(data) {
 //   console.log(data)
 // }
-//
+
 // const onSuccess = (data) => {
 //   let showRentalsHtml = showRentalTemplate({ rentals: data.rentals })
 //   $('#show').html(showRentalsHtml)
 // }
-//
+
 // const onError = function() {
 //
 // }
-//
+
 // const onDeleteSuccess = function (rentalId) {
 //   $('[data-id =' + rentalId + ']').remove()
 // }
@@ -33,13 +38,13 @@
 //
 // }
 //
-const onPostSuccess = function () {
-
-}
+// const onPostSuccess = function () {
+//
+// }
 // const onPostError = function () {
 //
 // }
-//
+
 // const onUpdateSucces = (data) => {
 //   console.log(data)
 //   let updateRentalHtml = updateRentalTemplate({rental: data.rental})
@@ -49,17 +54,17 @@ const onPostSuccess = function () {
 // const onUpdateError = function() {
 //
 // }
-//
+
 // const onSingleRentalShowSucces = (data) => {
 //   console.log(data)
 //   let showRentalHtml = showSingleRental({rental: data.rental})
 //   $('#show').html(showRentalHtml)
 // }
-// const onCreateNewReview = (data) => {
-//   let createReviewHtml = createReviewTemplate({ key: data })
-//   $('#shows').html(createReviewHtml)
-// }
-// module.exports = {
+const onCreateNewReview = (data) => {
+  let createReviewHtml = createReviewTemplate({ key: data })
+  $('#shows').html(createReviewHtml)
+}
+module.exports = {
   // onSuccess,
   // onError,
   // onDeleteSuccess,
@@ -68,10 +73,10 @@ const onPostSuccess = function () {
   // onUpdateError,
   // onPatchSuccess,
   // onPatchError,
-  // onIndexSuccess,
+  onIndexSuccess,
   // onIndexError,
-  // onCreateNewReview,
+  onCreateNewReview,
   // onPostSuccess,
   // onPostError,
   // onSingleRentalShowSucces
-// }
+}
