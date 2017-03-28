@@ -4,9 +4,8 @@
    <div data-id="{{review.id}}">
      <p>{{review.comment}}</p>
      <p>{{review.rating}}</p>
-     <p>{{review.rentals}}</p>
-
-     <!-- <button type="button" class="btn btn-default show-review" data-id="{{review.id}}" name="button">Show</button> -->
    </div>
    <br>
+
 {{/each}}
+<button type="button" class="btn btn-default create-review" data-id="{{createId}}" name="button">Write review</button>

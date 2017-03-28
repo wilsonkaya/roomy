@@ -52,18 +52,25 @@ const onGetReview = function (event) {
 //     .catch(ui.onPatchError)
 // }
 //
-// const onPostRental = function(event){
-//   event.preventDefault()
-//   let data = getFormFields(event.target)
-//   api.post(data)
-//   .then(api.indexMyRental)
-//   .then(ui.onSuccess)
-//   .then(ui.onPostSuccess)
-//   .catch(ui.onPostError)
-// }
-// const onShowRentalForm = function () {
-//   ui.onCreateNewRental()
-// }
+const onPostReview = function(event){
+  event.preventDefault()
+  let data = getFormFields(event.target)
+  let rental = data.review.rentals
+  let id  = {
+    rentals: rental
+  }
+  api.post(data)
+  .then(ui.onPostSuccess)
+  .then(api.index(id)//???
+  .then(ui.onIndexSuccess)
+  .catch(ui.onIndexError))//????
+  .catch(ui.onPostError)
+
+}
+const onCreateReview = function () {
+  let rentalId = event.target.getAttribute('data-id')
+  ui.onCreateNewReview(rentalId)
+}
 // const onSingleRental = function () {
 //   event.preventDefault()
 //
@@ -75,6 +82,8 @@ const onGetReview = function (event) {
 
 const reviewlHandlers = () => {
   $('#show').on('click', '.show-rental', onGetReview)
+  $('#shows').on('click', '.create-review', onCreateReview)
+  $('#shows').on('submit', '#createReview', onPostReview)
 
 }
 module.exports = {

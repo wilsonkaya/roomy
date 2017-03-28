@@ -53,7 +53,7 @@ const patch = function (data, rentalId) {
 
 const post = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/rentals',
+    url: config.apiOrigin + '/reviews',
     method: 'POST',
     headers: {
       Authorization: `Token token=${store.user.token}`

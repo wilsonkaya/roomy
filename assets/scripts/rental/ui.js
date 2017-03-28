@@ -44,7 +44,6 @@ const onPostError = function () {
 }
 
 const onUpdateSucces = (data) => {
-  console.log(data)
   let updateRentalHtml = updateRentalTemplate({rental: data.rental})
   $('#show').html(updateRentalHtml)
 }
@@ -54,7 +53,6 @@ const onUpdateError = function() {
 }
 
 const onSingleRentalShowSucces = (data) => {
-  console.log(data)
   let showRentalHtml = showSingleRental({rental: data.rental})
   $('#show').html(showRentalHtml)
 }

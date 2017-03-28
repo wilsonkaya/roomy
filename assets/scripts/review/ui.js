@@ -1,7 +1,9 @@
 'use strict'
 const showReviewsTemplate = require('../templates/show-reviews.handlebars')
+const createReviewTemplate = require('../templates/create-review.handlebars')
 const onIndexSuccess = (data) => {
-  let showReviewsHtml = showReviewsTemplate({ reviews: data.reviews })
+  let createId = data.reviews[0].rentals
+  let showReviewsHtml = showReviewsTemplate({ reviews: data.reviews, createId })
   $('#shows').html(showReviewsHtml)
 }
 
@@ -31,9 +33,9 @@ const onIndexSuccess = (data) => {
 //
 // }
 //
-// const onPostSuccess = function () {
-//
-// }
+const onPostSuccess = function () {
+
+}
 // const onPostError = function () {
 //
 // }
@@ -53,10 +55,10 @@ const onIndexSuccess = (data) => {
 //   let showRentalHtml = showSingleRental({rental: data.rental})
 //   $('#show').html(showRentalHtml)
 // }
-// const onCreateNewRental = () => {
-//   let createRentalFormHtml = createRentalForm()
-//   $('#show').html(createRentalFormHtml)
-// }
+const onCreateNewReview = (data) => {
+  let createReviewHtml = createReviewTemplate({ key: data })
+  $('#shows').html(createReviewHtml)
+}
 module.exports = {
   // onSuccess,
   // onError,
@@ -68,7 +70,7 @@ module.exports = {
   // onPatchError,
   onIndexSuccess,
   // onIndexError,
-  // onCreateNewRental,
+  onCreateNewReview,
   // onPostSuccess,
   // onPostError,
   // onSingleRentalShowSucces
