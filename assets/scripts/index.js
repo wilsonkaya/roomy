@@ -4,6 +4,7 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/events.js')
 const rentalEvents = require('./rental/events.js')
+const reviewEvents = require('./review/events.js')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -14,6 +15,7 @@ $(() => {
 $(() => {
   authEvents.addHandlers()
   rentalEvents.rentalHandlers()
+  reviewEvents.reviewlHandlers()
 })
 
 // use require without a reference to ensure a file is bundled

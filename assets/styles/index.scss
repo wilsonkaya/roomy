@@ -1,12 +1,23 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
+#main{
+
+}
+
 #show{
-width: 800px;
-height: 1600px;
+width: 700px;
+height: 300px;
 border: 1px solid black;
-margin-left: 25%;
 font-size: 20px;
+float:left;
+}
+#shows{
+width: 400px;
+height: 300px;
+border: 1px solid black;
+font-size: 20px;
+float: right;
 }
 
 // search bar
