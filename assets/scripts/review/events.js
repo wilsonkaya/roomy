@@ -8,8 +8,11 @@ const getFormFields = require('../../../lib/get-form-fields')
 
 const onGetReview = function (event) {
   event.preventDefault()
-  let data = getFormFields(event.target)
-  api.index()
+  let data = event.target.getAttribute('data-id')
+  let id  = {
+    rentals: data
+  }
+  api.index(id)
   .then(ui.onIndexSuccess)
   .catch(ui.onIndexError)
 }

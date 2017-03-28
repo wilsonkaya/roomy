@@ -1,6 +1,8 @@
 'use strict'
+const showReviewsTemplate = require('../templates/show-reviews.handlebars')
 const onIndexSuccess = (data) => {
-  console.log(data)
+  let showReviewsHtml = showReviewsTemplate({ reviews: data.reviews })
+  $('#shows').html(showReviewsHtml)
 }
 
 // const onIndexError = function(data) {

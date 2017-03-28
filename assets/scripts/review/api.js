@@ -2,13 +2,14 @@
 const config = require('../config')
 const store = require('../store')
 
-const index = function () {
+const index = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/reviews',
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
-    }
+    },
+    data
   })
 }
 
