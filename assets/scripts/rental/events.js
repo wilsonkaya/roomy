@@ -11,7 +11,7 @@ const onGetRental = function (event) {
   let data = getFormFields(event.target)
   api.index(data)
   .then(ui.onIndexSuccess)
-  .catch(ui.onError)
+  .catch(ui.onIndexError)
 }
 
 const onGetMyRental = function (event) {
@@ -27,7 +27,7 @@ const onShowUpdate = function(event) {
   let rentalId = event.target.getAttribute('data-id')
   api.show(rentalId)
     .then(ui.onUpdateSucces)
-    .catch(ui.onError)
+    .catch(ui.onUpdateError)
 }
 
 const onDeleteRental = function (event) {
@@ -35,7 +35,7 @@ const onDeleteRental = function (event) {
   let rentalId = event.target.getAttribute('data-id')
   api.destroy(rentalId)
     .then(ui.onDeleteSuccess(rentalId))
-    .catch(ui.onError)
+    .catch(ui.onDeleteError)
 }
 
 const onPatchRental = function(event) {
@@ -44,23 +44,30 @@ const onPatchRental = function(event) {
   let rentalId = event.target.getAttribute('data-id')
   api.patch(data, rentalId)
     .then(api.indexMyRental)
-    // .then(ui.onPatchSuccess)//I need to add warnings, it doesn't exist yet
     .then(ui.onSuccess)
-    .catch(ui.onError)
+    .then(ui.onPatchSuccess)
+    .catch(ui.onPatchError)
 }
 
 const onPostRental = function(event){
   event.preventDefault()
   let data = getFormFields(event.target)
-  console.log(data)
   api.post(data)
   .then(api.indexMyRental)
   .then(ui.onSuccess)
-  // .then(ui.onPostSuccess)//I need to add warnings
+  .then(ui.onPostSuccess)
   .catch(ui.onPostError)
 }
 const onShowRentalForm = function () {
   ui.onCreateNewRental()
+}
+const onSingleRental = function () {
+  event.preventDefault()
+
+  let rentalId = event.target.getAttribute('data-id')
+  api.show(rentalId)
+  .then(ui.onSingleRentalShowSucces)
+  .catch(ui.onError)
 }
 
 const rentalHandlers = () => {
@@ -71,6 +78,7 @@ const rentalHandlers = () => {
   $('#show').on('click', '.show-update', onShowUpdate)
   $('#show').on('submit', '.submit-update', onPatchRental)
   $('#show').on('submit', '#createRental', onPostRental)
+  $('#show').on('click', '.show-rental', onSingleRental)
   // $('.remove').on('click', onDeleteRental)
   // $('.submit-update').on('click', onShowUpdate)
   // $('#create-hint').on('submit', onPostAccount);
