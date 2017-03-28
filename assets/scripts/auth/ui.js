@@ -1,7 +1,10 @@
 'use strict'
 
 const success = (data) => {
-  if (data) { }
+  iziToast.info({
+    title: 'Hello',
+    message: 'Welcome!',
+});
 }
 
 const failure = (error) => {

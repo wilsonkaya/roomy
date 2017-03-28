@@ -1,11 +1,11 @@
-'use strict'
-const showReviewsTemplate = require('../templates/show-reviews.handlebars')
-const createReviewTemplate = require('../templates/create-review.handlebars')
-const onIndexSuccess = (data) => {
-  let createId = data.reviews[0].rentals
-  let showReviewsHtml = showReviewsTemplate({ reviews: data.reviews, createId })
-  $('#shows').html(showReviewsHtml)
-}
+// 'use strict'
+// const showReviewsTemplate = require('../templates/show-reviews.handlebars')
+// const createReviewTemplate = require('../templates/create-review.handlebars')
+// const onIndexSuccess = (data) => {
+//   let createId = data.reviews[0].rentals
+//   let showReviewsHtml = showReviewsTemplate({ reviews: data.reviews, createId })
+//   $('#shows').html(showReviewsHtml)
+// }
 
 // const onIndexError = function(data) {
 //   console.log(data)
@@ -55,11 +55,11 @@ const onPostSuccess = function () {
 //   let showRentalHtml = showSingleRental({rental: data.rental})
 //   $('#show').html(showRentalHtml)
 // }
-const onCreateNewReview = (data) => {
-  let createReviewHtml = createReviewTemplate({ key: data })
-  $('#shows').html(createReviewHtml)
-}
-module.exports = {
+// const onCreateNewReview = (data) => {
+//   let createReviewHtml = createReviewTemplate({ key: data })
+//   $('#shows').html(createReviewHtml)
+// }
+// module.exports = {
   // onSuccess,
   // onError,
   // onDeleteSuccess,
@@ -68,10 +68,10 @@ module.exports = {
   // onUpdateError,
   // onPatchSuccess,
   // onPatchError,
-  onIndexSuccess,
+  // onIndexSuccess,
   // onIndexError,
-  onCreateNewReview,
+  // onCreateNewReview,
   // onPostSuccess,
   // onPostError,
   // onSingleRentalShowSucces
-}
+// }
