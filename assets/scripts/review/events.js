@@ -14,7 +14,7 @@ const onGetReview = function (event) {
   }
   api.index(id)
   .then(ui.onIndexSuccess)
-  // .catch(ui.onIndexError)
+  .catch(ui.onIndexError)
 }
 
 const onGetMyReviews = function (event) {
