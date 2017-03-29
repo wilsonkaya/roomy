@@ -9,6 +9,10 @@ const onIndexSuccess = (data) => {
   $('.clean-sign').text('')
   let showRentalsHtml = showAllRentalsTemplate({ rentals: data.rentals })
   $('#show').html(showRentalsHtml)
+  iziToast.info({
+    title: 'Hello',
+    message: 'Welcome!',
+})
 
 }
 
