@@ -6,20 +6,27 @@ const createRentalForm = require('../templates/create-rental-form.handlebars')
 const showSingleRental = require('../templates/show-single-rental.handlebars')
 
 const onIndexSuccess = (data) => {
-  $('.clean-sign').text('')
-  let showRentalsHtml = showAllRentalsTemplate({ rentals: data.rentals })
-  $('#show').html(showRentalsHtml)
-
+  if(data.rentals.length === 0){
+  alertify.error('There are no rentals')
+  } else {
+    $('.clean-sign').text('')
+    let showRentalsHtml = showAllRentalsTemplate({ rentals: data.rentals })
+    $('#show').html(showRentalsHtml)
+  }
 }
 
-const onIndexError = function() {
+const onIndexError = function () {
 
 }
 
 const onSuccess = (data) => {
-  $('.clean-sign').text('')
+  if (data.rentals.length === 0) {
+  alertify.error("You don't have rentals")
+  } else {
+    $('.clean-sign').text('')
   let showRentalsHtml = showRentalTemplate({ rentals: data.rentals })
-  $('#show').html(showRentalsHtml)
+    $('#show').html(showRentalsHtml)
+  }
 }
 
 const onError = function () {
@@ -29,7 +36,7 @@ const onError = function () {
 const onDeleteSuccess = function (rentalId) {
   $('[data-id =' + rentalId + ']').remove()
 }
-const onDeleteError = function() {
+const onDeleteError = function () {
 
 }
 const onPatchSuccess = () => {

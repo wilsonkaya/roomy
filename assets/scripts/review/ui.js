@@ -2,14 +2,12 @@
 const showReviewsTemplate = require('../templates/show-reviews.handlebars')
 const createReviewTemplate = require('../templates/create-review.handlebars')
 const onIndexSuccess = (data) => {
-  // if(data.length > 0 ){
-    // let createId = data.reviews[0].rentals
-    let showReviewsHtml = showReviewsTemplate({ reviews: data.reviews})
+  if(data.reviews.length === 0){
+  alertify.error('There are no reviews')
+  } else {
+    let showReviewsHtml = showReviewsTemplate({reviews: data.reviews})
     $('#shows').html(showReviewsHtml)
-  // } else {
-  //   console.log("empty")
-  // }
-
+  }
 }
 
 // const onIndexError = function(data) {
