@@ -2,6 +2,7 @@
 const showReviewsTemplate = require('../templates/show-reviews.handlebars')
 const createReviewTemplate = require('../templates/create-review.handlebars')
 const showMyReviewTemplate = require('../templates/show-myreviews.handlebars')
+const updateReviewTemplate = require('../templates/update-review.handlebars')
 
 const onIndexSuccess = (data) => {
   if(data.reviews.length === 0){
@@ -34,10 +35,10 @@ const onError = function() {
 // const onPatchSuccess = () => {
 //
 // }
-// const onPatchError = () => {
-//
-// }
-//
+const onPatchError = () => {
+  alertify.error('Please fill in the fields with right data')
+}
+
 // const onPostSuccess = function () {
 //
 // }
@@ -45,11 +46,10 @@ const onError = function() {
 //
 // }
 
-// const onUpdateSucces = (data) => {
-//   console.log(data)
-//   let updateRentalHtml = updateRentalTemplate({rental: data.rental})
-//   $('#show').html(updateRentalHtml)
-// }
+const onUpdateSucces = (data) => {
+  let updateReviewHtml = updateReviewTemplate({review: data.review})
+  $('#show').html(updateReviewHtml)
+}
 //
 // const onUpdateError = function() {
 //
@@ -69,10 +69,10 @@ module.exports = {
   onError,
   // onDeleteSuccess,
   // onDeleteError,
-  // onUpdateSucces,
+  onUpdateSucces,
   // onUpdateError,
   // onPatchSuccess,
-  // onPatchError,
+  onPatchError,
   onIndexSuccess,
   // onIndexError,
   onCreateNewReview,

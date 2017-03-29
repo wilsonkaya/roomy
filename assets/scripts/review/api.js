@@ -23,12 +23,12 @@ const indexMyReview = function () {
   })
 }
 
-// const show = function (id) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/rentals/' + id,
-//     method: 'GET'
-//   })
-// }
+const show = function (id) {
+  return $.ajax({
+    url: config.apiOrigin + '/reviews/' + id,
+    method: 'GET'
+  })
+}
 
 // const destroy = function (rentalId) {
 //   return $.ajax({
@@ -40,16 +40,16 @@ const indexMyReview = function () {
 //   })
 // }
 
-// const patch = function (data, rentalId) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/rentals/' + rentalId,
-//     method: 'PATCH',
-//     headers: {
-//       Authorization: `Token token=${store.user.token}`
-//     },
-//     data
-//   })
-// }
+const patch = function (data, reviewId) {
+  return $.ajax({
+    url: config.apiOrigin + '/reviews/' + reviewId,
+    method: 'PATCH',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    },
+    data
+  })
+}
 
 const post = function (data) {
   return $.ajax({
@@ -64,9 +64,9 @@ const post = function (data) {
 
 module.exports = {
   index,
-  // show,
+  show,
   // destroy,
-  // patch,
+  patch,
   indexMyReview,
   post
 }

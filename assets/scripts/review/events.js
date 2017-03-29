@@ -24,14 +24,13 @@ const onGetMyReviews = function (event) {
   .catch(ui.onError)
 }
 
-// const onShowUpdate = function(event) {
-//   event.preventDefault()
-//   let data = getFormFields(event.target)
-//   let rentalId = event.target.getAttribute('data-id')
-//   api.show(rentalId)
-//     .then(ui.onUpdateSucces)
-//     .catch(ui.onUpdateError)
-// }
+const onShowUpdate = function(event) {
+  event.preventDefault()
+  let reviewId = event.target.getAttribute('data-id')
+  api.show(reviewId)
+    .then(ui.onUpdateSucces)
+    .catch(ui.onUpdateError)
+}
 
 // const onDeleteRental = function (event) {
 //   event.preventDefault()
@@ -41,16 +40,16 @@ const onGetMyReviews = function (event) {
 //     .catch(ui.onDeleteError)
 // }
 
-// const onPatchRental = function(event) {
-//   event.preventDefault()
-//   let data = getFormFields(event.target)
-//   let rentalId = event.target.getAttribute('data-id')
-//   api.patch(data, rentalId)
-//     .then(api.indexMyRental)
-//     .then(ui.onSuccess)
-//     .then(ui.onPatchSuccess)
-//     .catch(ui.onPatchError)
-// }
+const onPatchReviews = function(event) {
+  event.preventDefault()
+  let data = getFormFields(event.target)
+  let reviewId = event.target.getAttribute('data-id')
+  api.patch(data, reviewId)
+    .then(api.indexMyReview)
+    .then(ui.onSuccess)
+    // .then(ui.onPatchSuccess)
+    .catch(ui.onPatchError)
+}
 
 const onPostReview = function(event){
   event.preventDefault()
@@ -84,6 +83,8 @@ const reviewlHandlers = () => {
   $('#show').on('click', '.create-review', onCreateReview)
   $('#shows').on('submit', '#createReview', onPostReview)
   $('#my-reviews').on('click', onGetMyReviews)
+  $('#show').on('click', '.update-myreview', onShowUpdate)
+  $('#show').on('submit', '.submit-review-update', onPatchReviews)
 }
 module.exports = {
   reviewlHandlers
