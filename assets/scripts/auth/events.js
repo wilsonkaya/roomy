@@ -85,6 +85,8 @@ const onSignOut = function (event) {
       $('#warning-get').text('')
       $('.slogan').show()
       $('.clean-signup').val('')
+      $('.clean-signout').val('')
+      $('.clean-sign').text('')
       $('#warning1').text('')
     })
     .then(ui.success)

@@ -6,8 +6,10 @@ const createRentalForm = require('../templates/create-rental-form.handlebars')
 const showSingleRental = require('../templates/show-single-rental.handlebars')
 
 const onIndexSuccess = (data) => {
+  $('.clean-sign').text('')
   let showRentalsHtml = showAllRentalsTemplate({ rentals: data.rentals })
   $('#show').html(showRentalsHtml)
+
 }
 
 const onIndexError = function() {
@@ -15,11 +17,12 @@ const onIndexError = function() {
 }
 
 const onSuccess = (data) => {
+  $('.clean-sign').text('')
   let showRentalsHtml = showRentalTemplate({ rentals: data.rentals })
   $('#show').html(showRentalsHtml)
 }
 
-const onError = function() {
+const onError = function () {
 
 }
 
@@ -57,6 +60,7 @@ const onSingleRentalShowSucces = (data) => {
   $('#show').html(showRentalHtml)
 }
 const onCreateNewRental = () => {
+  $('.clean-sign').text('')
   let createRentalFormHtml = createRentalForm()
   $('#show').html(createRentalFormHtml)
 }
