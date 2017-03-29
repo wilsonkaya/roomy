@@ -17,12 +17,12 @@ const onGetReview = function (event) {
   .catch(ui.onIndexError)
 }
 
-// const onGetMyRental = function (event) {
-//   event.preventDefault()
-//   api.indexMyRental()
-//   .then(ui.onSuccess)
-//   .catch(ui.onError)
-// }
+const onGetMyReviews = function (event) {
+  event.preventDefault()
+  api.indexMyReview()
+  .then(ui.onSuccess)
+  .catch(ui.onError)
+}
 
 // const onShowUpdate = function(event) {
 //   event.preventDefault()
@@ -83,7 +83,7 @@ const reviewlHandlers = () => {
   $('#show').on('click', '.show-reviews', onGetReview)
   $('#show').on('click', '.create-review', onCreateReview)
   $('#shows').on('submit', '#createReview', onPostReview)
-
+  $('#my-reviews').on('click', onGetMyReviews)
 }
 module.exports = {
   reviewlHandlers

@@ -1,6 +1,8 @@
 'use strict'
 const showReviewsTemplate = require('../templates/show-reviews.handlebars')
 const createReviewTemplate = require('../templates/create-review.handlebars')
+const showMyReviewTemplate = require('../templates/show-myreviews.handlebars')
+
 const onIndexSuccess = (data) => {
   if(data.reviews.length === 0){
   alertify.error('There are no reviews')
@@ -14,14 +16,14 @@ const onIndexSuccess = (data) => {
 //   console.log(data)
 // }
 
-// const onSuccess = (data) => {
-//   let showRentalsHtml = showRentalTemplate({ rentals: data.rentals })
-//   $('#show').html(showRentalsHtml)
-// }
+const onSuccess = (data) => {
+  let showMyReviewsHtml = showMyReviewTemplate({ reviews: data.reviews })
+  $('#show').html(showMyReviewsHtml)
+}
 
-// const onError = function() {
-//
-// }
+const onError = function() {
+
+}
 
 // const onDeleteSuccess = function (rentalId) {
 //   $('[data-id =' + rentalId + ']').remove()
@@ -63,8 +65,8 @@ const onCreateNewReview = (data) => {
   $('#shows').html(createReviewHtml)
 }
 module.exports = {
-  // onSuccess,
-  // onError,
+  onSuccess,
+  onError,
   // onDeleteSuccess,
   // onDeleteError,
   // onUpdateSucces,

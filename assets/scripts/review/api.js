@@ -13,9 +13,9 @@ const index = function (data) {
   })
 }
 
-const indexMyRental = function () {
+const indexMyReview = function () {
   return $.ajax({
-    url: config.apiOrigin + '/myrentals',
+    url: config.apiOrigin + '/myreviews',
     method: 'GET',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -23,33 +23,33 @@ const indexMyRental = function () {
   })
 }
 
-const show = function (id) {
-  return $.ajax({
-    url: config.apiOrigin + '/rentals/' + id,
-    method: 'GET'
-  })
-}
+// const show = function (id) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/rentals/' + id,
+//     method: 'GET'
+//   })
+// }
 
-const destroy = function (rentalId) {
-  return $.ajax({
-    url: config.apiOrigin + '/rentals/' + rentalId,
-    method: 'DELETE',
-    headers: {
-      Authorization: `Token token=${store.user.token}`
-    }
-  })
-}
+// const destroy = function (rentalId) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/rentals/' + rentalId,
+//     method: 'DELETE',
+//     headers: {
+//       Authorization: `Token token=${store.user.token}`
+//     }
+//   })
+// }
 
-const patch = function (data, rentalId) {
-  return $.ajax({
-    url: config.apiOrigin + '/rentals/' + rentalId,
-    method: 'PATCH',
-    headers: {
-      Authorization: `Token token=${store.user.token}`
-    },
-    data
-  })
-}
+// const patch = function (data, rentalId) {
+//   return $.ajax({
+//     url: config.apiOrigin + '/rentals/' + rentalId,
+//     method: 'PATCH',
+//     headers: {
+//       Authorization: `Token token=${store.user.token}`
+//     },
+//     data
+//   })
+// }
 
 const post = function (data) {
   return $.ajax({
@@ -64,9 +64,9 @@ const post = function (data) {
 
 module.exports = {
   index,
-  show,
-  destroy,
-  patch,
-  indexMyRental,
+  // show,
+  // destroy,
+  // patch,
+  indexMyReview,
   post
 }
