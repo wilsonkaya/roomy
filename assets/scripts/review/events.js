@@ -14,7 +14,7 @@ const onGetReview = function (event) {
   }
   api.index(id)
   .then(ui.onIndexSuccess)
-  .catch(ui.onIndexError)
+  // .catch(ui.onIndexError)
 }
 
 const onGetMyReviews = function (event) {
@@ -60,12 +60,10 @@ const onPostReview = function(event){
     rentals: rental
   }
   api.post(data)
-  .then(ui.onPostSuccess)
-  .then(api.index(id)//???
+  .then(api.index(id)
   .then(ui.onIndexSuccess)
-  .catch(ui.onIndexError))//????
+  .catch(ui.onIndexError))
   .catch(ui.onPostError)
-
 }
 const onCreateReview = function () {
   let rentalId = event.target.getAttribute('data-id')

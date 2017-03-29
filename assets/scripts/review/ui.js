@@ -42,9 +42,9 @@ const onPatchError = () => {
 // const onPostSuccess = function () {
 //
 // }
-// const onPostError = function () {
-//
-// }
+const onPostError = function () {
+alertify.error('Please fill in the fields with right data')
+}
 
 const onUpdateSucces = (data) => {
   let updateReviewHtml = updateReviewTemplate({review: data.review})
@@ -77,6 +77,6 @@ module.exports = {
   // onIndexError,
   onCreateNewReview,
   // onPostSuccess,
-  // onPostError,
+  onPostError,
   // onSingleRentalShowSucces
 }
