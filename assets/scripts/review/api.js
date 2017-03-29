@@ -30,15 +30,15 @@ const show = function (id) {
   })
 }
 
-// const destroy = function (rentalId) {
-//   return $.ajax({
-//     url: config.apiOrigin + '/rentals/' + rentalId,
-//     method: 'DELETE',
-//     headers: {
-//       Authorization: `Token token=${store.user.token}`
-//     }
-//   })
-// }
+const destroy = function (reviewId) {
+  return $.ajax({
+    url: config.apiOrigin + '/reviews/' + reviewId,
+    method: 'DELETE',
+    headers: {
+      Authorization: `Token token=${store.user.token}`
+    }
+  })
+}
 
 const patch = function (data, reviewId) {
   return $.ajax({
@@ -65,7 +65,7 @@ const post = function (data) {
 module.exports = {
   index,
   show,
-  // destroy,
+  destroy,
   patch,
   indexMyReview,
   post

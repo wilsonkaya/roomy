@@ -32,13 +32,14 @@ const onShowUpdate = function(event) {
     .catch(ui.onUpdateError)
 }
 
-// const onDeleteRental = function (event) {
-//   event.preventDefault()
-//   let rentalId = event.target.getAttribute('data-id')
-//   api.destroy(rentalId)
-//     .then(ui.onDeleteSuccess(rentalId))
-//     .catch(ui.onDeleteError)
-// }
+const onDeleteReview = function (event) {
+  event.preventDefault()
+  let reviewId = event.target.getAttribute('data-id')
+  console.log(reviewId)
+  api.destroy(reviewId)
+    .then(ui.onDeleteSuccess(reviewId))
+    .catch(ui.onDeleteError)
+}
 
 const onPatchReviews = function(event) {
   event.preventDefault()
@@ -85,6 +86,7 @@ const reviewlHandlers = () => {
   $('#my-reviews').on('click', onGetMyReviews)
   $('#show').on('click', '.update-myreview', onShowUpdate)
   $('#show').on('submit', '.submit-review-update', onPatchReviews)
+  $('#show').on('click', '.delete-myreview', onDeleteReview)
 }
 module.exports = {
   reviewlHandlers

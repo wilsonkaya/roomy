@@ -26,12 +26,12 @@ const onError = function() {
 
 }
 
-// const onDeleteSuccess = function (rentalId) {
-//   $('[data-id =' + rentalId + ']').remove()
-// }
-// const onDeleteError = function() {
-//
-// }
+const onDeleteSuccess = function (rentalId) {
+  $('[data-id =' + rentalId + ']').remove()
+}
+const onDeleteError = function() {
+  alertify.error('Try again!')
+}
 // const onPatchSuccess = () => {
 //
 // }
@@ -67,7 +67,7 @@ const onCreateNewReview = (data) => {
 module.exports = {
   onSuccess,
   onError,
-  // onDeleteSuccess,
+  onDeleteSuccess,
   // onDeleteError,
   onUpdateSucces,
   // onUpdateError,
