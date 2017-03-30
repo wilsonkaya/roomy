@@ -9,10 +9,10 @@ const getFormFields = require('../../../lib/get-form-fields')
 const onGetReview = function (event) {
   event.preventDefault()
   let data = event.target.getAttribute('data-id')
-  let id  = {
+  let obj  = {
     rentals: data
   }
-  api.index(id)
+  api.index(obj)
   .then(ui.onIndexSuccess)
   .catch(ui.onIndexError)
 }
@@ -56,14 +56,15 @@ const onPostReview = function(event){
   event.preventDefault()
   let data = getFormFields(event.target)
   let rental = data.review.rentals
-  let id  = {
+  let obj  = {
     rentals: rental
   }
   api.post(data)
-  .then(
-  api.index(id)
-  .then(ui.onIndexSuccess)//???onemli
-  .catch(ui.onIndexError))//??? onemli
+  .then(() => {
+    return api.index(obj)
+  })
+  .then(ui.onIndexSuccess)
+  .catch(ui.onIndexError)
   .catch(ui.onPostError)
 }
 const onCreateReview = function () {
