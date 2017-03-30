@@ -7,6 +7,9 @@
       <!-- Do not add `link` tags unless you know what you are doing -->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
 
+      <!-- font -->
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Shrikhand" rel="stylesheet">
+
       <!-- AlertifyJS-CSS stylesheet -->
       <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.9.0/css/alertify.min.css"/>
       <!-- AlertifyJS-Semantic UI theme -->
@@ -163,8 +166,17 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<div class="jumbotron headerdata">
+<h3 id="mainheader">Welcome to Roomy!</h3>
+<div class="instructions">
+  This application allows you to search for room rentals in a city.
+  If you have a spare room, you can post a rental. You also comment on and
+  review other rentals.
+</div>
+</div>
 <form class="form-wrapper deneme visible-signin">
-    <input type="text" name="city" class="clean-signout" id="search" placeholder="Search for a city" required>
+    <input type="text" name="city" style="text-transform:uppercase" class="clean-signout" id="search" placeholder="Search for a city" required >
     <input type="submit"  id="keyWord">
 </form>
 

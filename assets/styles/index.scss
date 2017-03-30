@@ -28,7 +28,7 @@ background-color: transparent;
 
 #show{
 width: 700px;
-height: 300px;
+height: 600px;
 // border: 1px solid black;
 font-size: 20px;
 text-align: center;
@@ -350,4 +350,29 @@ a {
 
 .formbut::-moz-focus-inner {
 	border: 0;
+}
+
+// .card-title{
+//   background-color: #f5f5f5;
+//  border-color: #ddd;
+// }
+.card-block{
+  text-align: center;
+  overflow: scroll;
+}
+
+.headerdata{
+  // background-color: transparent;
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0 5%;
+  border-color: transparent;
+  color: white;
+  font-family: 'Indie Flower', cursive;
+}
+#mainheader{
+  font-size: 60px;
+}
+
+.instructions{
+  font-size: 20px;
 }

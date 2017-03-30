@@ -16,7 +16,9 @@
 <div data-id="{{review.id}}" class="card card-inverse card-success mb-3 text-center">
   <div class="card-block">
     <blockquote class="card-blockquote">
-      <p>{{review.comment}}</p>
+      <label class="col-sm-2 col-form-label">Comment:</label>
+      <p id="super">{{review.comment}}</p>
+      <label class="col-sm-2 col-form-label">Rating:</label>
       <p>{{review.rating}} stars</p>
       <!-- <fieldset class="ratings">
       <input type="radio" name="review[rating]" value="{{review.rating}}" checked /><label for="{{review.rating}}">{{review.rating}} stars</label>
