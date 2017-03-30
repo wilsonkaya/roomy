@@ -10,6 +10,7 @@ const store = require('../store')
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
+  if (data.credentials.password === data.credentials.password_confirmation) {
   api.signUp(data)
     .then((response) => {
       $('#warning1').text('')
@@ -27,6 +28,9 @@ const onSignUp = function (event) {
       $('#warning1').text('Existing username or wrong password !')
     })
     .catch(ui.failure)
+  } else {
+    alertify.error('Passwords Must Match!')
+  }
 }
 
 const onSignIn = function (event) {
