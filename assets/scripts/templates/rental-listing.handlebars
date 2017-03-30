@@ -1,4 +1,4 @@
-{{#each rentals as |rental|}}
+<!-- {{#each rentals as |rental|}}
 
 
    <div data-id="{{rental.id}}">
@@ -11,4 +11,20 @@
      <button type="button" class="btn btn-default show-update" data-id="{{rental.id}}" name="button">Update</button>
      <button type="button" name="button" class="btn btn-default remove" data-id="{{rental.id}}">Remove</button>
    </div>
+{{/each}} -->
+
+{{#each rentals as |rental|}}
+<div class="card card-inverse card-info mb-3 text-center" data-id="{{rental.id}}">
+  <div class="card-block">
+    <blockquote class="card-blockquote">
+      <p>{{rental.title}}</p>
+      <p>{{rental.name}}</p>
+      <p>{{rental.city}}</p>
+      <p>{{rental.description}}</p>
+      <p>{{rental.phone}}</p>
+      <button type="button" class="btn btn-default show-update" data-id="{{rental.id}}" name="button">Update</button>
+      <button type="button" name="button" class="btn btn-default remove" data-id="{{rental.id}}">Remove</button>
+    </blockquote>
+  </div>
+</div>
 {{/each}}

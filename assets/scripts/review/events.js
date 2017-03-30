@@ -60,9 +60,10 @@ const onPostReview = function(event){
     rentals: rental
   }
   api.post(data)
-  .then(api.index(id)
-  .then(ui.onIndexSuccess)
-  .catch(ui.onIndexError))
+  .then(
+  api.index(id)
+  .then(ui.onIndexSuccess)//???onemli
+  .catch(ui.onIndexError))//??? onemli
   .catch(ui.onPostError)
 }
 const onCreateReview = function () {

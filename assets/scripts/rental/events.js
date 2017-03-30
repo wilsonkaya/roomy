@@ -48,7 +48,7 @@ const onPatchRental = function(event) {
     .catch(ui.onPatchError)
 }
 
-const onPostRental = function(event){
+const onPostRental = function (event) {
   event.preventDefault()
   let data = getFormFields(event.target)
   api.post(data)

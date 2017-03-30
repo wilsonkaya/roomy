@@ -6,6 +6,7 @@ const updateReviewTemplate = require('../templates/update-review.handlebars')
 
 const onIndexSuccess = (data) => {
   if(data.reviews.length === 0){
+  $('.clean-shows').text('')
   alertify.error('There are no reviews')
   } else {
     let showReviewsHtml = showReviewsTemplate({reviews: data.reviews})
@@ -18,8 +19,14 @@ const onIndexSuccess = (data) => {
 // }
 
 const onSuccess = (data) => {
+  if (data.reviews.length === 0) {
+  $('.clean-sign').text('')
+  alertify.error("You don't have any reviews ")
+  } else {
+    $('.clean-sign').text('')///is it right
   let showMyReviewsHtml = showMyReviewTemplate({ reviews: data.reviews })
-  $('#show').html(showMyReviewsHtml)
+    $('#show').html(showMyReviewsHtml)
+  }
 }
 
 const onError = function() {

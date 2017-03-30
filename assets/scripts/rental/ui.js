@@ -21,7 +21,9 @@ const onIndexError = function () {
 
 const onSuccess = (data) => {
   if (data.rentals.length === 0) {
-  alertify.error("You don't have rentals")
+  // $('.clean-shows').text('')
+  $('.clean-sign').text('')
+  alertify.error("You don't have rentalssss")
   } else {
     $('.clean-sign').text('')
   let showRentalsHtml = showRentalTemplate({ rentals: data.rentals })
@@ -43,14 +45,14 @@ const onPatchSuccess = () => {
 
 }
 const onPatchError = () => {
-
+  alertify.error('Please fill in the forms with right type of data')
 }
 
 const onPostSuccess = function () {
 
 }
 const onPostError = function () {
-
+  alertify.error('Please fill in the forms with right type of data')
 }
 
 const onUpdateSucces = (data) => {

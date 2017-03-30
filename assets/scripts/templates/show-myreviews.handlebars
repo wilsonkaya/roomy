@@ -1,12 +1,26 @@
-{{#each reviews as |review|}}
+<!-- {{#each reviews as |review|}}
 
 
    <div data-id="{{review.id}}">
      <p>{{review.comment}}</p>
-     <p>{{review.rating}}</p>
+     <p>{{review.rating}}</p> -->
      <!-- <p>{{review.rentals}}</p> -->
-   </div>
+   <!-- </div>
    <br>
    <button type="button" class="btn btn-default update-myreview" data-id="{{review.id}}" name="button">Update review</button>
    <button type="button" class="btn btn-default delete-myreview" data-id="{{review.id}}" name="button">Delete review</button>
+{{/each}} -->
+
+{{#each reviews as |review|}}
+
+<div data-id="{{review.id}}" class="card card-inverse card-success mb-3 text-center">
+  <div class="card-block">
+    <blockquote class="card-blockquote">
+      <p>{{review.comment}}</p>
+      <p>{{review.rating}}</p>
+      <button type="button" class="btn btn-default update-myreview" data-id="{{review.id}}" name="button">Update review</button>
+      <button type="button" class="btn btn-default delete-myreview" data-id="{{review.id}}" name="button">Delete review</button>
+    </blockquote>
+  </div>
+</div>
 {{/each}}
