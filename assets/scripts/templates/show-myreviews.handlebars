@@ -17,10 +17,10 @@
   <div class="card-block">
     <blockquote class="card-blockquote">
       <p>{{review.comment}}</p>
-      <!-- <p>{{review.rating}}</p> -->
-      <fieldset class="ratings">
+      <p>{{review.rating}} stars</p>
+      <!-- <fieldset class="ratings">
       <input type="radio" name="review[rating]" value="{{review.rating}}" checked /><label for="{{review.rating}}">{{review.rating}} stars</label>
-      </fieldset>
+      </fieldset> -->
       <button type="button" class="btn btn-default update-myreview" data-id="{{review.id}}" name="button">Update review</button>
       <button type="button" class="btn btn-default delete-myreview" data-id="{{review.id}}" name="button">Delete review</button>
     </blockquote>

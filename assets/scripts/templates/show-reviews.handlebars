@@ -1,13 +1,23 @@
 {{#each reviews as |review|}}
 
+<div data-id="{{review.id}}" class="card card-inverse card-warning mb-3 text-center">
+  <div class="card-block">
+    <blockquote class="card-blockquote">
+      <p>{{review.comment}}</p>
+      <p>{{review.rating}} stars</p>
+    </blockquote>
+  </div>
+</div>
 
-   <div data-id="{{review.id}}">
+
+   <!-- <div data-id="{{review.id}}">
      <p>{{review.comment}}</p>
-     <!-- <p>{{review.rating}}</p> -->
+     <p>{{review.rating}} stars</p> -->
 
+<!--
      <fieldset class="ratings">
-     <input type="radio" name="review[rating]" value="{{review.rating}}" checked /><label for="{{review.rating}}">{{review.rating}} stars</label>
-     </fieldset>
+     <input type="radio" name="{{review.rating}}" value="{{review.rating}}" checked /><label for="star{{review.rating}}">{{review.rating}} stars</label>
+     </fieldset> -->
 
      <!-- <p>{{review.rentals}}</p> -->
    </div>
