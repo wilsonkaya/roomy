@@ -15,7 +15,7 @@ const onIndexSuccess = (data) => {
 }
 
 // const onIndexError = function(data) {
-//   console.log(data)
+
 // }
 
 const onSuccess = (data) => {
@@ -57,16 +57,7 @@ const onUpdateSucces = (data) => {
   let updateReviewHtml = updateReviewTemplate({review: data.review})
   $('#show').html(updateReviewHtml)
 }
-//
-// const onUpdateError = function() {
-//
-// }
 
-// const onSingleRentalShowSucces = (data) => {
-//   console.log(data)
-//   let showRentalHtml = showSingleRental({rental: data.rental})
-//   $('#show').html(showRentalHtml)
-// }
 const onCreateNewReview = (data) => {
   let createReviewHtml = createReviewTemplate({ key: data })
   $('#shows').html(createReviewHtml)

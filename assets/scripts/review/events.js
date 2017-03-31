@@ -35,7 +35,6 @@ const onShowUpdate = function(event) {
 const onDeleteReview = function (event) {
   event.preventDefault()
   let reviewId = event.target.getAttribute('data-id')
-  console.log(reviewId)
   api.destroy(reviewId)
     .then(ui.onDeleteSuccess(reviewId))
     .catch(ui.onDeleteError)
