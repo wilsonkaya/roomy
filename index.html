@@ -54,11 +54,11 @@
                     <fieldset>
                       <label>
                     Old Password
-                    <input type= "password" name="passwords[old]" class="clean-changepassword">
+                    <input type= "password" name="passwords[old]" class="clean-changepassword" maxlength="30">
                   </label>
                       <label>
                     New Password
-                    <input type= "password" name="passwords[new]" class="clean-changepassword">
+                    <input type= "password" name="passwords[new]" class="clean-changepassword" maxlength="30">
                   </label>
                       <input type="submit" name="submit" value="change-password">
                     </fieldset>
@@ -106,15 +106,15 @@
                     <fieldset>
                       <label>
                         Email
-                        <input type="text" name="credentials[email]" class= "clean-signup">
+                        <input type="email" name="credentials[email]" class= "clean-signup">
                       </label>
                       <label>
                         Password
-                        <input type= "password" name="credentials[password]" class = "clean-signup">
+                        <input type= "password" name="credentials[password]" class = "clean-signup" maxlength="30">
                       </label>
                       <label>
                         Password Confirmation
-                        <input type="password" name="credentials[password_confirmation]" class="clean-signup">
+                        <input type="password" name="credentials[password_confirmation]" class="clean-signup" maxlength="30">
                       </label>
                       <input type="submit" name="submit" value="Sign up!">
                     </fieldset>
@@ -176,7 +176,7 @@
 </div>
 </div>
 <form class="form-wrapper deneme visible-signin">
-    <input type="text" name="city" class="clean-signout" id="search" placeholder="Search for a city" required >
+    <input type="text" name="city" class="clean-signout" id="search" placeholder="Search for a city" maxlength="30" required >
     <input type="submit"  id="keyWord">
 </form>
 
