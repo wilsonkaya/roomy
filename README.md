@@ -1,6 +1,5 @@
-
 ## Roomy ##
-![Wireframe](http://imgur.com/uMeJbDX)
+[Wireframe](http://imgur.com/uMeJbDX)
 Link for picture: http://imgur.com/uMeJbDX
 
 ## Technologies ##
