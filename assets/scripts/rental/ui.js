@@ -6,7 +6,8 @@ const createRentalForm = require('../templates/create-rental-form.handlebars')
 const showSingleRental = require('../templates/show-single-rental.handlebars')
 
 const onIndexSuccess = (data) => {
-  if(data.rentals.length === 0){
+  if (data.rentals.length === 0) {
+    $('.clean-sign').text('')
   alertify.error('There are no rentals')
   } else {
     $('.clean-sign').text('')
@@ -22,11 +23,11 @@ const onIndexError = function () {
 const onSuccess = (data) => {
   if (data.rentals.length === 0) {
   // $('.clean-shows').text('')
-  $('.clean-sign').text('')
-  alertify.error("You don't have rentalssss")
+    $('.clean-sign').text('')
+    alertify.error("You don't have rentals")
   } else {
     $('.clean-sign').text('')
-  let showRentalsHtml = showRentalTemplate({ rentals: data.rentals })
+    let showRentalsHtml = showRentalTemplate({ rentals: data.rentals })
     $('#show').html(showRentalsHtml)
   }
 }

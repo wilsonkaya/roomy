@@ -38,7 +38,7 @@ margin-bottom: 250px;
 }
 #shows{
 width: 400px;
-height: 300px;
+height: 600px;
 // border: 1px solid black;
 font-size: 20px;
 float: right;
@@ -382,4 +382,7 @@ a {
   font-size: 25px;
   color: white;
   font-family: 'Indie Flower', cursive;
+}
+.pre-scrol{
+  overflow: scroll;
 }
