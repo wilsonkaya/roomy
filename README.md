@@ -2,6 +2,21 @@
 <img width="720" alt="myapps" src="https://cloud.githubusercontent.com/assets/19995421/24551589/03d8924c-15f1-11e7-8c7b-e9c6a6d87180.png">
 Link for picture: http://imgur.com/uMeJbDX
 
+## Deployed Site ##
+https://wilsonkaya.github.io/roomy/
+
+## Github Link Front-End ##
+https://github.com/wilsonkaya/roomy
+
+## Deployed Api ##
+https://roomy-api.herokuapp.com
+
+## Github Link Back-End ##
+https://github.com/wilsonkaya/roomy-api
+
+## ERD ##
+http://imgur.com/a/vHXQo
+
 ## Technologies ##
 The technologies that I have used in front-end are HTML, JQuery, CSS and Handlebars. The main frame of the application is created with plain HTML. The browser template that is provided for this project has a Bootstrap 3, to implement cards I have utilized Bootstrap 4. Api calls are made by an ajax request. The data from api-server is rendered by handlebars.
 
