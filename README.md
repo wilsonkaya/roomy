@@ -1,5 +1,5 @@
 ## Roomy ##
-[Wireframe](http://imgur.com/uMeJbDX)
+<img width="720" alt="myapps" src="https://cloud.githubusercontent.com/assets/19995421/24551589/03d8924c-15f1-11e7-8c7b-e9c6a6d87180.png">
 Link for picture: http://imgur.com/uMeJbDX
 
 ## Technologies ##
