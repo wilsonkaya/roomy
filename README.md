@@ -1,6 +1,7 @@
 
 ## Roomy ##
-![Wireframe](http://imgur.com/fduvura)
+![Wireframe](http://imgur.com/uMeJbDX)
+Link for picture: http://imgur.com/uMeJbDX
 
 ## Technologies ##
 The technologies that I have used in front-end are HTML, JQuery, CSS and Handlebars. The main frame of the application is created with plain HTML. The browser template that is provided for this project has a Bootstrap 3, to implement cards I have utilized Bootstrap 4. Api calls are made by an ajax request. The data from api-server is rendered by handlebars.
