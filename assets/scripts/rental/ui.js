@@ -4,6 +4,7 @@ const showAllRentalsTemplate = require('../templates/rental-index-listing.handle
 const updateRentalTemplate = require('../templates/update-rental-listing.handlebars')
 const createRentalForm = require('../templates/create-rental-form.handlebars')
 const showSingleRental = require('../templates/show-single-rental.handlebars')
+const showSingleMap = require('../templates/show-map.handlebars')
 
 const onIndexSuccess = (data) => {
   if (data.rentals.length === 0) {
@@ -74,6 +75,12 @@ const onCreateNewRental = () => {
   let createRentalFormHtml = createRentalForm()
   $('#show').html(createRentalFormHtml)
 }
+
+const onShowMaPSuccess = (longitude, latitude) => {
+  const showMapHtml = showSingleMap({ longitude: longitude, latitude: latitude })
+  $('#shows').html(showMapHtml)
+  console.log(longitude, latitude)
+}
 module.exports = {
   onSuccess,
   onError,
@@ -88,5 +95,6 @@ module.exports = {
   onCreateNewRental,
   onPostSuccess,
   onPostError,
-  onSingleRentalShowSucces
+  onSingleRentalShowSucces,
+  onShowMaPSuccess
 }

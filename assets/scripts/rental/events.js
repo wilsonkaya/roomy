@@ -69,6 +69,13 @@ const onSingleRental = function () {
   .catch(ui.onError)
 }
 
+const onShowMaP = function () {
+  event.preventDefault()
+  const longitude = event.target.getAttribute('data-lon')
+  const latitude = event.target.getAttribute('data-lat')
+  ui.onShowMaPSuccess(longitude, latitude)
+}
+
 const rentalHandlers = () => {
   $('#getRentals').on('click', onGetMyRental)
   $('.deneme').on('submit', onGetRental)
@@ -78,6 +85,7 @@ const rentalHandlers = () => {
   $('#show').on('submit', '.submit-update', onPatchRental)
   $('#show').on('submit', '#createRental', onPostRental)
   $('#show').on('click', '.show-rental', onSingleRental)
+  $('#show').on('click', '.show-map', onShowMaP)
   // $('.remove').on('click', onDeleteRental)
   // $('.submit-update').on('click', onShowUpdate)
   // $('#create-hint').on('submit', onPostAccount);
