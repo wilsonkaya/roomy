@@ -1,16 +1,16 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-html{
-  background:
-    linear-gradient(
-      rgba(0, 0, 0, 0.5),
-      rgba(0, 0, 0, 0.5)
-    ),
-    url("pictures/rental.png") no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-}
+// html{
+//   background:
+//     linear-gradient(
+//       rgba(0, 0, 0, 0.5),
+//       rgba(0, 0, 0, 0.5)
+//     ),
+//     url("pictures/rental.png") no-repeat center center fixed;
+//   -webkit-background-size: cover;
+//   -moz-background-size: cover;
+//   background-size: cover;
+// }
 .navbar {
    background-color: transparent;
    background: transparent;
