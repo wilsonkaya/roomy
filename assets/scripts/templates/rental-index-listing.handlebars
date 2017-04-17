@@ -1,4 +1,4 @@
-{{#each rentals as |rental|}}
+<!-- {{#each rentals as |rental|}}
 
 
    <div class="card" data-id="{{rental.id}}">
@@ -15,5 +15,20 @@
      <button type="button" class="btn btn-default create-review" data-id="{{rental.id}}" name="button">Write Review</button>
      </div>
    </div>
+   <br>
+{{/each}} -->
+
+{{#each rentals as |rental|}}
+     <div class="cards card-1" data-id="{{rental.id}}">
+     <p>{{rental.title}}</p>
+     <p>{{rental.name}}</p>
+     <p>{{rental.city}}</p>
+     <p>{{rental.description}}</p>
+     <p>{{rental.phone}}</p>
+
+     <button type="button" class="btn btn-default show-reviews" data-id="{{rental.id}}" name="button">Show Reviews</button>
+     <button type="button" class="btn btn-default create-review" data-id="{{rental.id}}" name="button">Write Review</button>
+     </div>
+
    <br>
 {{/each}}

@@ -6,9 +6,9 @@ const index = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/rentals',
     method: 'GET',
-    headers: {
-      Authorization: `Token token=${store.user.token}`
-    },
+    // headers: {
+    //   Authorization: `Token token=${store.user.token}`
+    // },
     data
   })
 }
