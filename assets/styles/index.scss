@@ -11,6 +11,9 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 //   -moz-background-size: cover;
 //   background-size: cover;
 // }
+html{
+  background-color: #f4f4f4;
+}
 .navbar {
   background: #fff;
 	filter: none !important;
@@ -59,7 +62,7 @@ margin-top:30px;
 
 #show{
 // width: 700px;
-height: 400px;
+height: 600px;
 // border: 1px solid black;
 font-size: 20px;
 text-align: center;
@@ -70,7 +73,7 @@ float:left;
 }
 #shows{
 // width: 600px;
-height: 400px;
+height: 600px;
 // border: 1px solid black;
 font-size: 20px;
 float: left;
@@ -112,7 +115,7 @@ a {
 	-webkit-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
 	-moz-box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
 	box-shadow: 0 3px 3px rgba(255,255,255,.1), 0 3px 0 #bbb, 0 4px 0 #aaa, 0 5px 5px #444;
-	margin: 100px auto;
+	margin: 25px auto;
 	overflow: hidden;
 	padding: 8px;
 	width: 800px;
