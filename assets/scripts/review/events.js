@@ -2,11 +2,13 @@
 
 const api = require('./api.js')
 const ui = require('./ui.js')
+const store = require('../store')
 // attach getFormFields globally
 
 const getFormFields = require('../../../lib/get-form-fields')
 
 const onGetReview = function (event) {
+  console.log(`${store.user.email}`)
   event.preventDefault()
   let data = event.target.getAttribute('data-id')
   let obj  = {
