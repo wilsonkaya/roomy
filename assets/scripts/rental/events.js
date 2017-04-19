@@ -51,6 +51,7 @@ const onPatchRental = function(event) {
 const onPostRental = function (event) {
   event.preventDefault()
   let data = getFormFields(event.target)
+  // console.log(data)
   api.post(data)
   .then(api.indexMyRental)
   .then(ui.onSuccess)
