@@ -1,6 +1,4 @@
-{{#each reviews as |review|}}
-
-<!-- <div data-id="{{review.id}}" class="card card-inverse card-warning mb-3 text-center"> -->
+ <!-- {{#each reviews as |review|}}
   <div class="card-block">
     <div id="profile">
       <div class="avatar"></div>
@@ -12,24 +10,34 @@
         <h3>Super Ev</h3>
       </div>
       <div class="review-organise">
-        <!-- <label class="col-sm-2 col-form-label">Comment:</label> -->
         <p>{{review.comment}}</p>
       </div>
       <div class="review-organise">
-        <!-- <label class="col-sm-2 col-form-label">Rating:</label> -->
-        <!-- <p>{{review.rating}} stars</p> -->
         <span class="rating-static rating-{{review.rating}}"></span>
       </div>
-
-
     </div>
-    <!-- <blockquote class="card-blockquote"> -->
-
-
-
-    <!-- </blockquote> -->
   </div>
-<!-- </div> -->
+{{/each}} -->
 
+{{#each reviews as |review|}}
+<div class="business-card centeres">
+  <div class="title">
+    <p>{{review.name}}</p>
+  </div>
+  <div class="content span2">
+  <p>{{review.comment}}</p>  <br />
+
+    </span>
+      <span class="rating-static rating-{{review.rating}}"></span><br>
+  </div>
+  <div class="content span2">
+    <div class="avatar"></div>
+    <div class="avatar-name">{{review.name}}</div>
+    <!-- <img src="http://www.gravatar.com/avatar/c2b06fbfe35d23dd71368c02157006ee.png" alt="avatar" class="avatar" /> -->
+  </div>
+  <div class="footer">
+    <br>
+  </div>
+</div>
 
 {{/each}}

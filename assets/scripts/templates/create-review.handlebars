@@ -1,4 +1,4 @@
-<div>
+<!-- <div>
   <form id="createReview">
     <div class="write-review-style">
       <label class="label-styl">Write your review title <span class="max-fifty">(50 characters max)</span></label>
@@ -17,9 +17,38 @@
     <div class="write-review-style">
       <label class="label-styl">Write your review<span class="normal">- Share your experience!</span></label>
       <textarea name="review[comment]"  rows="5" maxlength="2500" placeholder="Your overall impression of the property and your stay"></textarea>
-      <!-- <input type="text" name="review[comment]" class="clean-update" placeholder="Comment" required="required" maxlength="50"> -->
     </div>
       <input type="hidden" name="review[rentals]" class="clean-update" value="{{key}}">
     <input type="submit" name="submit">
   </form>
-</div>
+</div> -->
+      <!-- <input type="text" name="review[comment]" class="clean-update" placeholder="Comment" required="required" maxlength="50"> -->
+
+<form id="createReview"  class="smart-green">
+<h1>Contact Form<span>Please fill all the texts in the fields.</span></h1>
+<p>
+  <label>
+    <span>Review Title :</span>
+  <!-- <input id="name" type="text" name="name" placeholder="Your Full Name"> -->
+  <input id="name" type="text" name="review[name]" class="clean-update" placeholder="Name" required="required" maxlength="20">
+  </label>
+  <label>
+    <span>Your Email :</span>
+    <fieldset class="rating">
+    <input type="radio" id="star5" name="review[rating]" value="5" /><label for="star5">5 stars</label>
+    <input type="radio" id="star4" name="review[rating]" value="4" /><label for="star4">4 stars</label>
+    <input type="radio" id="star3" name="review[rating]" value="3" /><label for="star3">3 stars</label>
+    <input type="radio" id="star2" name="review[rating]" value="2" /><label for="star2">2 stars</label>
+    <input type="radio" id="star1" name="review[rating]" value="1"  /><label for="star1">1 star</label>
+    </fieldset>
+    <!-- <br> -->
+    <input type="hidden" name="review[rentals]" class="clean-update" value="{{key}}">
+    <!-- <br> -->
+  </label>
+  <label>
+    <span>Message :</span>
+    <textarea id="message" maxlength="50" name="review[comment]" placeholder="Your Message to Us"></textarea>
+  </label>
+  <label><span>&nbsp;</span><input type="submit" class="button" value="submit"></label>
+</p>
+</form>
