@@ -434,10 +434,9 @@ a {
     background-size: cover;
 
 };
-// .avatar-name {
-//   margin: 2px auto;
-//   padding-bottom: 32px;
-// }
+.avatar-name {
+ width:100px;
+}
 .cards {
   background: #fff;
   border-radius: 2px;
@@ -490,6 +489,7 @@ a {
   height: 16px;
   display: block;
   background: url('http://www.itsalif.info/blogfiles/rating/star-rating.png') 0 0 no-repeat;
+  // background-color: transparent;
 }
 
 .rating-5 { background-position: 0 0; }
@@ -616,7 +616,7 @@ textarea {
     margin-right:auto;
 
     max-width: 500px;
-    background: #F8F8F8;
+    background: white;
     padding: 30px 30px 20px 30px;
     font: 12px Arial, Helvetica, sans-serif;
     color: #666;
@@ -704,14 +704,22 @@ textarea {
 }
 
 .span2 {
- width: 40%;
+ width: 65%;
+ height: 65%;
  padding: 0;
  float: left;
+ overflow-y: scroll;
+}
+.span3{
+  width: 100px;
+  height: 100px;
+  padding: 15px;
+  float: left;
 }
 
 .business-card {
  position: relative;
- background: #eeeeec;
+ background: #FFFFFF;
  color: #2e3436;
  width: 400px;
  height: 240px;
@@ -735,16 +743,18 @@ textarea {
 }
 
 .business-card .content {
- font-weight: bold;
+ // font-weight: bold;
  padding: 15px;
 }
 
 .business-card .avatar {
- float: right;
+ // float: right;
  max-width: 100px;
  max-height: 100px;
  box-shadow: 0 0 10px 1px #777;
  border-radius: 3px;
+ // margin-left: 100px;
+ padding: 5px;
 }
 
 .business-card .footer {
@@ -753,6 +763,6 @@ textarea {
  left: 2%;
  font-size: 15px;
  padding-top: 5px;
- border-top: 1px solid;
+ // border-top: 1px solid;
  width: 96%;
 }
