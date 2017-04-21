@@ -26,6 +26,7 @@ const onSuccess = (data) => {
     $('.clean-sign').text('')///is it right
   let showMyReviewsHtml = showMyReviewTemplate({ reviews: data.reviews })
     $('#show').html(showMyReviewsHtml)
+    $('.instructions').hide()
   }
 }
 

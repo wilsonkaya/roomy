@@ -14,6 +14,7 @@ const onIndexSuccess = (data) => {
     $('.clean-sign').text('')
     let showRentalsHtml = showAllRentalsTemplate({ rentals: data.rentals })
     $('#show').html(showRentalsHtml)
+    $('.instructions').hide()
   }
 }
 
@@ -30,6 +31,7 @@ const onSuccess = (data) => {
     $('.clean-sign').text('')
     let showRentalsHtml = showRentalTemplate({ rentals: data.rentals })
     $('#show').html(showRentalsHtml)
+    $('.instructions').hide()
   }
 }
 

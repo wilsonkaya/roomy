@@ -60,6 +60,7 @@ const onPostRental = function (event) {
 }
 const onShowRentalForm = function () {
   ui.onCreateNewRental()
+  $('.instructions').hide()
 }
 const onSingleRental = function () {
   event.preventDefault()
