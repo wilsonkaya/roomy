@@ -1,7 +1,6 @@
-<div>
-  <form class="submit-review-update" data-id="{{review.id}}">
+<!-- <div>
+  <form class="submit-review-update smart-green" data-id="{{review.id}}">
     <input type="text" name="review[comment]" value="{{review.comment}}" class="clean-update" required="required" maxlength="50">
-    <!-- <input type="text" name="review[rating]" value="{{review.rating}}" class="clean-update"> -->
     <fieldset class="rating">
     <input type="radio" id="star5" name="review[rating]" value="5" /><label for="star5">5 stars</label>
     <input type="radio" id="star4" name="review[rating]" value="4" /><label for="star4">4 stars</label>
@@ -13,4 +12,28 @@
     <input type="submit" name="submit">
   </form>
 
-</div>
+</div> -->
+
+<form class="submit-review-update smart-green" data-id="{{review.id}}">
+<h1>Contact Form<span>Please fill all the texts in the fields.</span></h1>
+<p>
+  <label>
+    <span>Review Title :</span>
+  <!-- <input id="name" type="text" name="name" placeholder="Your Full Name"> -->
+  <input type="text" name="review[comment]" value="{{review.comment}}" class="clean-update" required="required" maxlength="50">
+  </label>
+  <label>
+    <span>Your Email :</span>
+    <fieldset class="rating">
+    <input type="radio" id="star5" name="review[rating]" value="5" /><label for="star5">5 stars</label>
+    <input type="radio" id="star4" name="review[rating]" value="4" /><label for="star4">4 stars</label>
+    <input type="radio" id="star3" name="review[rating]" value="3" /><label for="star3">3 stars</label>
+    <input type="radio" id="star2" name="review[rating]" value="2" /><label for="star2">2 stars</label>
+    <input type="radio" id="star1" name="review[rating]" value="1" /><label for="star1">1 star</label>
+    </fieldset>
+    <input type="hidden" name="review[rentals]" value="{{review.rentals}}" class="clean-update">
+  </label>
+
+  <label><span>&nbsp;</span><input type="submit" class="button" value="submit"></label>
+</p>
+</form>
