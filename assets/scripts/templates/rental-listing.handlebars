@@ -3,13 +3,23 @@
        <div class="room">
 
        </div>
-     <p class="picture-title">{{rental.title}}</p>
-     <p>{{rental.name}}</p>
-     <p>{{rental.city}}</p>
-     <p>{{rental.description}}</p>
-     <p>{{rental.phone}}</p>
+       <div class="">
+         <p class="picture-title">{{rental.title}}</p>
+         <label class="card-label">Owner:</label>
+         <p class="organizes">{{rental.name}}</p>
+         <label class="card-label">City:</label>
+         <p class="organizes">{{rental.city}}</p>
+         <label class="card-label">Phone:</label>
+         <p class="organizes">{{rental.phone}}</p>
+         <label class="card-label">Description:</label>
+         <p class="organizes">{{rental.description}}</p>
+       </div>
 
-     <button type="button" class="btn btn-default show-reviews" data-id="{{rental.id}}" name="button">Show Reviews</button>
-     <button type="button" class="btn btn-default create-review" data-id="{{rental.id}}" name="button">Write Review</button>
+
+
+
+
+     <button type="button" class="btn btn-default show-update" data-id="{{rental.id}}" name="button">Update</button>
+     <button type="button" name="button" class="btn btn-default remove" data-id="{{rental.id}}">Remove</button>
      </div>
 {{/each}}
