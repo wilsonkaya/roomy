@@ -83,7 +83,7 @@ const onCreateReview = function () {
 const reviewlHandlers = () => {
   $('#show').on('click', '.show-reviews', onGetReview)
   $('#show').on('click', '.create-review', onCreateReview)
-  $('#shows').on('submit', '#createReview', onPostReview)
+  $('#show').on('submit', '#createReview', onPostReview)
   $('#my-reviews').on('click', onGetMyReviews)
   $('#show').on('click', '.update-myreview', onShowUpdate)
   $('#show').on('submit', '.submit-review-update', onPatchReviews)

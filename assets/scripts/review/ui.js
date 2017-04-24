@@ -10,7 +10,7 @@ const onIndexSuccess = (data) => {
   alertify.error('There are no reviews')
   } else {
     let showReviewsHtml = showReviewsTemplate({reviews: data.reviews})
-    $('#shows').html(showReviewsHtml)
+    $('#show').html(showReviewsHtml)
   }
 }
 
@@ -61,7 +61,7 @@ const onUpdateSucces = (data) => {
 
 const onCreateNewReview = (data) => {
   let createReviewHtml = createReviewTemplate({ key: data })
-  $('#shows').html(createReviewHtml)
+  $('#show').html(createReviewHtml)
 }
 module.exports = {
   onSuccess,

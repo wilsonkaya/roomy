@@ -1,21 +1,15 @@
 {{#each rentals as |rental|}}
-<div class="card card-inverse card-info mb-3 text-center" data-id="{{rental.id}}">
-  <div class="card-block">
-    <blockquote class="card-blockquote">
-      <span>Title:</span>
-      <p>{{rental.title}}</p>
-      <span>Name:</span>
-      <p>{{rental.name}}</p>
-      <span>City:</span>
-      <p>{{rental.city}}</p>
-      <span>Description:</span>
-      <p>{{rental.description}}</p>
-      <span>Phone:</span>
-      <p>{{rental.phone}}</p>
-      <button type="button" class="btn btn-default show-update" data-id="{{rental.id}}" name="button">Update</button>
-      <button type="button" name="button" class="btn btn-default remove" data-id="{{rental.id}}">Remove</button>
-      <button type="button" name="button" class="btn btn-default show-map" data-lon="{{rental.longitude}}" data-lat="{{rental.latitude}}">Show on the map</button>
-    </blockquote>
-  </div>
-</div>
+     <div class="cards card-1" data-id="{{rental.id}}">
+       <div class="room">
+
+       </div>
+     <p class="picture-title">{{rental.title}}</p>
+     <p>{{rental.name}}</p>
+     <p>{{rental.city}}</p>
+     <p>{{rental.description}}</p>
+     <p>{{rental.phone}}</p>
+
+     <button type="button" class="btn btn-default show-reviews" data-id="{{rental.id}}" name="button">Show Reviews</button>
+     <button type="button" class="btn btn-default create-review" data-id="{{rental.id}}" name="button">Write Review</button>
+     </div>
 {{/each}}
