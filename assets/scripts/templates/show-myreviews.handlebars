@@ -21,10 +21,12 @@
   </div>
 
 
-  <label class="col-sm-2 col-form-label">Comment:</label>
+  <label class="card-label">Comment:</label>
   <p id="super">{{review.comment}}</p>
-  <label class="col-sm-2 col-form-label">Rating:</label>
-  <p>{{review.rating}} stars</p>
+  <label class="card-label">Rating:</label>
+  <div class="star-location">
+    <span class="rating-static rating-{{review.rating}}"></span>
+  </div>
   <button type="button" class="btn btn-default update-myreview" data-id="{{review.id}}" name="button">Update review</button>
   <button type="button" class="btn btn-default delete-myreview" data-id="{{review.id}}" name="button">Delete review</button>
 
