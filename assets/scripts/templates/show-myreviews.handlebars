@@ -1,4 +1,4 @@
-{{#each reviews as |review|}}
+<!-- {{#each reviews as |review|}}
 
 <div data-id="{{review.id}}" class="card card-inverse card-success mb-3 text-center">
   <div class="card-block">
@@ -12,4 +12,23 @@
     </blockquote>
   </div>
 </div>
+{{/each}} -->
+
+
+{{#each reviews as |review|}}
+<div class="cardss card-1" data-id="{{rental.id}}">
+  <div class="room">
+  </div>
+
+
+  <label class="col-sm-2 col-form-label">Comment:</label>
+  <p id="super">{{review.comment}}</p>
+  <label class="col-sm-2 col-form-label">Rating:</label>
+  <p>{{review.rating}} stars</p>
+  <button type="button" class="btn btn-default update-myreview" data-id="{{review.id}}" name="button">Update review</button>
+  <button type="button" class="btn btn-default delete-myreview" data-id="{{review.id}}" name="button">Delete review</button>
+
+
+</div>
+
 {{/each}}
