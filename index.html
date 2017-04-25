@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Roomy</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- font -->
+      <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Shrikhand" rel="stylesheet">
+
+      <!-- AlertifyJS-CSS stylesheet -->
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.9.0/css/alertify.min.css"/>
+      <!-- AlertifyJS-Semantic UI theme -->
+      <link rel="stylesheet" href="//cdn.jsdelivr.net/alertifyjs/1.9.0/css/themes/semantic.min.css"/>
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+      <!-- AlertifyJS script -->
+       <script src="//cdn.jsdelivr.net/alertifyjs/1.9.0/alertify.min.js"></script>
+
+    </head>
+    <body class="container-fluid">
+      <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <p id="navhead">Roomy</p>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <button type="button" class="btn btn-warning btn-lg visible-signin" data-toggle="modal" data-target="#myModal3">
+            Change Password
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Change Password!</h4>
+                </div>
+                <div class="modal-body">
+                  <form id="change-password">
+                    <fieldset>
+                      <label>
+                    Old Password
+                    <input type= "password" name="passwords[old]" class="clean-changepassword" maxlength="30">
+                  </label>
+                      <label>
+                    New Password
+                    <input type= "password" name="passwords[new]" class="clean-changepassword" maxlength="30">
+                  </label>
+                      <input type="submit" name="submit" value="change-password">
+                    </fieldset>
+                    <div id="warning3">
+
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <li>
+          <form id="sign-out">
+            <fieldset>
+              <input type="submit" class="btn btn-warning btn-lg visible-signin" name="submit" value="Sign Out!">
+            </fieldset>
+          </form>
+        </li>
+
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-warning btn-lg signin-hide" data-toggle="modal" data-target="#myModal2">
+            Sign In
+          </button>
+
+          <!-- sign-up -->
+          <button type="button" class="btn btn-warning btn-lg signin-hide" data-toggle="modal" data-target="#myModal">
+            Sign Up
+            </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Sign up!</h4>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-up">
+                    <fieldset>
+                        <input type="email" name="credentials[email]" class= "clean-signup dez" placeholder="email">
+                        <input type= "password" name="credentials[password]" class = "clean-signup dez" maxlength="30" placeholder="password">
+                        <input type="password" name="credentials[password_confirmation]" class="clean-signup dez" maxlength="30" placeholder="password">
+                      <input class="sign-but" type="submit" name="submit" value="Sign up!">
+                    </fieldset>
+                    <div id="warning1">
+
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Modal -->
+          <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Sign in!</h4>
+                </div>
+                <div class="modal-body">
+                  <form id="sign-in">
+                    <fieldset>
+                        <input type="text" name="credentials[email]" class="clean-signin dez" placeholder="Email">
+                        <input type= "password" name="credentials[password]" class="clean-signin dez" placeholder="Password">
+                      <input class="sign-but" type="submit" name="submit" value="Sign in!">
+                    </fieldset>
+                  </form>
+                  <div id="warning2">
+
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default close-button" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!--
+<div class="jumbotron headerdata">
+<h3 id="mainheader">Welcome to Roomy!</h3>
+<div class="instructions">
+  This application allows you to search for room rentals in a city.
+  If you have a spare room, you can post a rental. You also comment on and
+  review other rentals.
+</div>
+</div> -->
+<form class="form-wrapper deneme">
+    <input type="text" name="city" class="clean-signout" id="search" placeholder="Search for a city" maxlength="30" required >
+    <button type="submit" id="keyWord" name="button">Search</button>
+</form>
+
+<div class="visible-signin">
+  <button name="button" id="getRentals" class="btn btn-default">My Rentals</button>
+  <button name="button" id="createRentalForm" class="btn btn-default">Create Rental</button>
+  <button type="button" id="my-reviews" class="btn btn-default" name="button">My Reviews</button>
+</div>
+
+<div class="instructions">
+  <h3 id="mainheader">Welcome to Roomy!</h3>
+  This application allows you to search for room rentals in a city.
+  If you have a spare room, you can post a rental. You also comment on and
+  review other rentals.
+</div>
+<div class="container-fluid" id="main">
+
+  <div id="show" class="col-lg-6 pre-scrol clean-sign">
+
+  </div>
+  <!-- <div id="shows" class="col-lg-6 pre-scrol clean-sign clean-shows">
+
+  </div> -->
+</div>
+
+
+</body>
+</html>
