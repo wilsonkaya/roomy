@@ -846,21 +846,21 @@ textarea {
  font-size: 20px;
  border-bottom: 2px solid #d3d7df;
  border-radius: 15px;
- box-shadow: 0 0 10px 1px #000;
+ box-shadow: 0 0 7px 1px #000;
  margin-top: 5%;
  float:left;
 }
 
 .business-card .title {
- background: #9DC45F;
+ background: #0483a0;
  color: #fff;
  height: 42px;
  padding: 10px;
  font-weight: bold;
  font-size: 25px;
- border-top: 2px solid #9DC45F;
- border-left: 2px solid #9DC45F;
- border-radius: 14px 14px 0 0;
+ border-top: 2px solid #0483a0;
+ border-left: 2px solid #0483a0;
+ border-radius: 8px 8px 0 0;
 }
 
 .business-card .content {
@@ -872,7 +872,7 @@ textarea {
  // float: right;
  max-width: 100px;
  max-height: 100px;
- box-shadow: 0 0 10px 1px #777;
+ // box-shadow: 0 0 10px 1px #777;
  border-radius: 3px;
  // margin-left: 100px;
  padding: 5px;
